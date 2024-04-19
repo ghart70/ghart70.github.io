@@ -366,12 +366,15 @@ a:focus {
   background-color: #ffffff;
 }
 
+.please-center-for-me {
+  justify-content: center;
+}
+
 .slider_section .find_container form .btn-box {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: center;
 }
 
 .slider_section .find_container form .btn-box button.btn {
