@@ -124,7 +124,7 @@ a:focus {
   color: #ffffff;
 }
 
-.navbar-brand span small {
+.navbar-brand span navbar-small {
   font-size: 20px;
   font-weight: bold;
   color: #ffffff;
