@@ -345,6 +345,10 @@ a:focus {
   color: #08135c;
 }
 
+.form-row {
+  justify-content: center;
+}
+
 .slider_section .find_container form .form-group {
   margin: 15px 0;
 }
@@ -367,6 +371,7 @@ a:focus {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
 }
 
 .slider_section .find_container form .btn-box button.btn {
