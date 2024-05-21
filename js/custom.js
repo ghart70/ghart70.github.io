@@ -24,7 +24,17 @@ $(document).ready(function () {
 // I don't properly understand how async works
 // so it was a delightful surprise to have this work the first time
 
+function progressSlideshow(){
+    slideshowState += 1;
+    if(slideshowState >= slideshowSize){
+        slideshowState = 0;
+    }
+    let heroArea = document.getElementsByClassName("hero_area")[0];
+    heroArea.style.backgroundImage = `linear-gradient(to right, rgba(8, 19, 92, 0.9), rgba(8, 19, 92, 0.9)), url(../images/slideshow${slideshowState}.jpg)`;
+}
+
 function changeBackgroundAndWait() {
+    progressSlideshow();
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve('timeout expired.');
@@ -39,5 +49,8 @@ async function asyncBackgroundSlideshow() {
     asyncBackgroundSlideshow();
     // Expected output: "resolved"
 }
-  
+
+// Fuck you I'm using a global variable
+var slideshowState = 0;
+var slideshowSize = 1;
 asyncBackgroundSlideshow();
