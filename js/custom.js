@@ -20,20 +20,24 @@ $(document).ready(function () {
   background-image: linear-gradient(to right, rgba(8, 19, 92, 0.9), rgba(8, 19, 92, 0.9)), url(../images/michael.jpg);
 */
 
-function resolveAfter30Seconds() {
+// Credit to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+// I don't properly understand how async works
+// so it was a delightful surprise to have this work the first time
+
+function changeBackgroundAndWait() {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve('resolved');
+        resolve('timeout expired.');
       }, 30000);
     });
 }
   
-async function asyncCall() {
-    alert('calling');
-    const result = await resolveAfter30Seconds();
-    alert(result);
-    asyncCall();
+async function asyncBackgroundSlideshow() {
+    console.log('changing background...');
+    const result = await changeBackgroundAndWait();
+    console.log(result);
+    asyncBackgroundSlideshow();
     // Expected output: "resolved"
 }
   
-asyncCall();
+asyncBackgroundSlideshow();
