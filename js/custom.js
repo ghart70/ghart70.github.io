@@ -52,5 +52,5 @@ async function asyncBackgroundSlideshow() {
 
 // Fuck you I'm using a global variable
 var slideshowState = 0;
-var slideshowSize = 1;
+var slideshowSize = 2;
 asyncBackgroundSlideshow();
