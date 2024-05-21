@@ -47,7 +47,6 @@ async function asyncBackgroundSlideshow() {
     const result = await changeBackgroundAndWait();
     console.log(result);
     asyncBackgroundSlideshow();
-    // Expected output: "resolved"
 }
 
 // Fuck you I'm using a global variable
